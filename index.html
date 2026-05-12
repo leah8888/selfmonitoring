@@ -1497,18 +1497,7 @@ function showDataSections(){
 }
 
 // ── Navigation ──
-function showPage(id){
-  document.querySelectorAll('.page-panel').forEach(p=>p.classList.remove('active'));
-  const target=document.getElementById('page-'+id);
-  if(target) target.classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
-  const nav=document.getElementById('nav-'+id);
-  if(nav) nav.classList.add('active');
-  // 페이지별 데이터 로드
-  if(id==='admin-classes') loadClassList();
-  if(id==='admin-dashboard') loadAdminDashboard();
-  if(id==='sa-kindergartens') loadKindergartens();
-}
+
 
 function showSubtab(id){
   showPage('write');
