@@ -786,7 +786,7 @@ function closeModal(id){ document.getElementById(id).style.display = 'none'; }
 
 async function callFn(name, opts = {}) {
   const { data: { session } } = await sb.auth.getSession();
-  const token = session?.access_token;
+  const token = session?.access_token || '';
   const res = await fetch(`${FN_BASE}/${name}`, {
     method: opts.method || 'GET',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
